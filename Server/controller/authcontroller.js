@@ -76,7 +76,7 @@ export const logout = async (req, res) => {
       httpOnly: true,
       secure: true,
       sameSite: "None",
-      maxAge: new Date.now(), // 🔥 force delete
+      maxAge: Date.now(), // 🔥 force delete
     });
     res.status(200).json({ success: true, message: "Logout success" });
   } catch (error) {
