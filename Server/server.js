@@ -8,7 +8,6 @@ import cors from "cors";
 
 dotenv.config();
 
-await connectDB();
 const app = express();
 
 app.use(
@@ -21,5 +20,7 @@ app.use(cookieparser());
 app.use(express.json());
 app.use("/api/auth/", router);
 app.use("/api/tracker/", mainRouter);
+
+await connectDB();
 
 export default app;
