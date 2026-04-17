@@ -3,7 +3,7 @@ import login from "../model/login.js";
 
 export const auth = async (req, res, next) => {
   try {
-    const { token } = req.cookies;
+    const token = req.cookies.token;
     console.log(token);
     if (!token) {
       return res
