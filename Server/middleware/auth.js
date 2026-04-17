@@ -4,6 +4,7 @@ import login from "../model/login.js";
 export const auth = async (req, res, next) => {
   try {
     const { token } = req.cookies;
+    console.log(token);
     if (!token) {
       return res
         .status(400)
