@@ -148,30 +148,6 @@ const Dashboard = () => {
     }
   };
 
-  const year = async () => {
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/tracker/yeargraph`,
-        { withCredentials: true },
-      );
-
-      const record = response.data.yearlyRecord;
-      record.map((rec) => {
-        if (rec.role == "expense") {
-          console.log(rec);
-          setCategoryData([
-            ...categoryData,
-            { name: rec.category, value: rec.amount },
-          ]);
-
-          console.log(categoryData);
-        }
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
     fetchData();
     monInc();
@@ -328,32 +304,6 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="dashboard">
-        {/* Charts Section */}
-        <div className="chart-section">
-          {/* Pie Chart */}
-          <div className="chart-card">
-            <h3>Spending by Category</h3>
-            <ResponsiveContainer width="100%" height={250}>
-              <PieChart>
-                <Pie
-                  data={categoryData}
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={80}
-                  dataKey="value"
-                >
-                  {categoryData.map((entry, index) => (
-                    <Cell key={index} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
           </div>
         </div>
       </div>
