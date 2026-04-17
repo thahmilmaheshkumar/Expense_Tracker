@@ -14,6 +14,7 @@ export const auth = async (req, res, next) => {
     req.user = await login.findById(decode.id);
     next();
   } catch (error) {
-    res.status(400).json({ success: false, message: "Login to access" });
+    console.log(error);
+    res.status(400).json({ success: false, message: "Login to access jsjs" });
   }
 };
