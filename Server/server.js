@@ -8,7 +8,7 @@ import cors from "cors";
 
 dotenv.config();
 
-connectDB();
+await connectDB();
 const app = express();
 
 app.use(
