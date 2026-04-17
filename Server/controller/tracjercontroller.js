@@ -1,4 +1,6 @@
+import { connectDB } from "../database/db.js";
 import tracker from "../model/tracker.js";
+await connectDB();
 
 export const addEvent = async (req, res) => {
   try {

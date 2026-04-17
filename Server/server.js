@@ -10,6 +10,8 @@ dotenv.config();
 
 const app = express();
 
+await connectDB();
+
 app.use(
   cors({
     origin:
@@ -21,7 +23,5 @@ app.use(cookieparser());
 app.use(express.json());
 app.use("/api/auth/", router);
 app.use("/api/tracker/", mainRouter);
-
-await connectDB();
 
 export default app;

@@ -1,6 +1,9 @@
 import login from "../model/login.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { connectDB } from "../database/db.js";
+
+await connectDB();
 
 export const register = async (req, res) => {
   try {
