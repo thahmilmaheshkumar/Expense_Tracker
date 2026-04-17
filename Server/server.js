@@ -22,6 +22,4 @@ app.use(express.json());
 app.use("/api/auth/", router);
 app.use("/api/tracker/", mainRouter);
 
-app.listen(process.env.PORT, () => {
-  console.log("Server is running in port: ", process.env.PORT);
-});
+export default app;
