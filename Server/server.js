@@ -12,7 +12,8 @@ const app = express();
 
 app.use(
   cors({
-    origin: "https://expense-tracker-frontend-sand-seven.vercel.app",
+    origin:
+      "https://expense-tracker-frontend-git-main-thahmilmaheshkumars-projects.vercel.app",
     credentials: true,
   }),
 );
