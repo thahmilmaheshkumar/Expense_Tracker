@@ -42,7 +42,7 @@ const Login = () => {
       window.scroll(top);
       console.log(response);
       await auth();
-      if (!isauth) {
+      if (isauth) {
         Navigate("/dashboard");
       }
     } catch (err) {

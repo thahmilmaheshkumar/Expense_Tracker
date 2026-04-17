@@ -16,7 +16,7 @@ const Navebar = () => {
         { withCredentials: true },
       );
       await auth();
-      if (isauth) {
+      if (!isauth) {
         Navigate("/login");
       }
 
