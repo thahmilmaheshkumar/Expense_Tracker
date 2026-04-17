@@ -62,7 +62,7 @@ export const monthlyInc = async (req, res) => {
     let monthIncome = 0;
     record.map((rec) => {
       if (
-        rec.date.toLocaleDateString().split("/")[1] ==
+        Number(rec.date.toLocaleDateString().split("/")[1]) ==
         new Date().getMonth() + 1
       ) {
         if (rec.role == "income") {
