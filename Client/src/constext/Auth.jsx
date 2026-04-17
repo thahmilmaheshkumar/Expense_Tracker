@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
       console.log(response);
       setIsAuth(true);
     } catch (error) {
-      console.log(error);
+      console.log(error.response);
       setIsAuth(false);
     }
   };
