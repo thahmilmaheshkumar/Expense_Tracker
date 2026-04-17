@@ -12,6 +12,7 @@ export const AuthProvider = ({ children }) => {
         `${import.meta.env.VITE_API_URL}/api/tracker/tracker`,
         { withCredentials: true },
       );
+      console.log(response);
       setIsAuth(true);
     } catch (error) {
       console.log(error);
